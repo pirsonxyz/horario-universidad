@@ -6,8 +6,8 @@ const DEF=[
 {n:"Lab. de Gráficos en Ingeniería",c:"INGG 227L",cr:1,p:"J. Meléndez",col:C.lab,s:[{d:[2],a:16,b:19,r:"LABTI411"}]},
 {n:"Ser Humano y Sociedad",c:"SOCI 102",cr:2,p:"M. Camilo",col:C.soc,s:[{d:[1],a:14,b:16,r:"Aula GC-204"}]},
 {n:"Nutrición Deportiva (Electiva)",c:"MEDI 106",cr:2,p:"A. Lebrón",col:C.ele,s:[{d:[4],a:14,b:16,r:"Virtual"}]},
-{n:"Introducción a la Programación",c:"INGG 102",cr:2,p:"J. Jiménez",col:C.pro,s:[],as:"Virtual · horario a anunciar"},
-{n:"Lab. de Introducción a la Programación",c:"INGG 102L",cr:0,p:"J. Jiménez",col:C.pro,s:[],as:"Virtual · horario a anunciar"}];
+{n:"Introducción a la Programación",c:"INGG 102",cr:2,p:"J. Jiménez",col:C.pro,s:[],as:"Virtual · Asincrónica"},
+{n:"Lab. de Introducción a la Programación",c:"INGG 102L",cr:0,p:"J. Jiménez",col:C.pro,s:[],as:"Virtual · Asincrónica"}];
 const D=["Lun","Mar","Mié","Jue","Vie"],DF=["Lunes","Martes","Miércoles","Jueves","Viernes"];
 const H0=8,H1=19,PX=56,f=h=>{const x=Math.floor(h),m=Math.round((h-x)*60);return String(x).padStart(2,"0")+":"+String(m).padStart(2,"0")};
 const $=id=>document.getElementById(id);
@@ -37,7 +37,7 @@ if(b.ok){const d=await b.json();if(d&&Array.isArray(d.members))T=d.members}
 if(c.ok){const d=await c.json();if(d&&Array.isArray(d.tasks)&&Array.isArray(d.notices))BD={notices:d.notices,tasks:d.tasks}}
 synced=true;if(!E&&!busy())drawAll()}catch(e){synced=false}}
 // ---- pestañas ----
-const TB=["📅 Semana","🗓 Día","📋 Materias","👥 Equipo","⇅ Datos","✏️ Editar","📌 Avisos y tareas"];let tab=1;
+const TB=["📅 Semana","🗓 Día","📋 Materias","👥 Equipo","⇅ Datos"];let tab=1;
 function drawTabs(){$("tabs").innerHTML=TB.map((t,i)=>i==0?"":`<button class="tab ${tab==i?"on":""}" onclick="tab=${i};drawTabs()">${t}${i==6&&pend().length?" · "+pend().length:""}</button>`).join("");
 for(let i=1;i<7;i++)$("p"+i).classList.toggle("on",i==tab);$("lay").classList.toggle("wide",tab==5)}
 // ---- contador ----
