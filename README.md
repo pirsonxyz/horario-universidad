@@ -15,7 +15,7 @@ horario-pages/
 
 ## Cómo funciona la llave
 La llave vive **solo en el servidor** como variable de entorno `EDIT_KEY`. El navegador la envía en el
-header `X-Edit-Key` y la Function la compara; nunca aparece en el código de la página.
+header `X-Edit-Key` y la Function la compara; nunca aparece en el código de la página. 
 
 ## Despliegue
 1. Sube la carpeta a un repo de GitHub (`git init && git add . && git commit -m "horario" && git push`).
